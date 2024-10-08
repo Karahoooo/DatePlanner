@@ -1,0 +1,155 @@
+        body {
+            font-family: 'Poppins', sans-serif; /* Set font style */
+            background-color: #ffe6e6; /* Background color */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            display: flex; /* Use flexbox layout */
+            justify-content: center; /* Center items horizontally */
+            align-items: center; /* Center items vertically */
+            min-height: 100vh; /* Full height for the viewport */
+            overflow: hidden;
+            }
+            .heart {
+            position: absolute;
+            bottom: -100px; /* Start below the screen */
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            transform: rotate(-45deg);
+            opacity: 0.7;
+            }
+
+           .heart::before,
+           .heart::after {
+           content: "";
+           position: absolute;
+           width: 20px;
+           height: 20px;
+           background-color: red;
+           border-radius: 50%;
+           }
+
+           .heart::before {
+           top: -10px;
+           left: 0;
+           }
+
+           .heart::after {
+           left: 10px;
+           top: 0;
+           }
+
+           @keyframes float {
+           to {
+           transform: translateY(-100vh) rotate(-45deg);
+           opacity: 0; /* Fade out effect */
+           }
+           }
+
+
+        /* Original container styles */
+        .container {
+            background-color: #fff; /* Container background color */
+            border-radius: 20px; /* Rounded corners */
+            padding: 30px; /* Padding inside the container */
+            box-shadow: 0 0 20px rgba(255,77,77,0.2); /* Shadow effect */
+            max-width: 400px; /* Maximum width of the container */
+            width: 100%; /* Full width */
+            text-align: center; /* Center text */
+            transition: all 0.3s ease; /* Smooth transitions */
+            z-index: 2; /* Bring the content in front of the hearts */
+        }
+        .container {
+            background-color: #fff; /* Container background color */
+            border-radius: 20px; /* Rounded corners */
+            padding: 30px; /* Padding inside the container */
+            box-shadow: 0 0 20px rgba(255,77,77,0.2); /* Shadow effect */
+            max-width: 400px; /* Maximum width of the container */
+            width: 100%; /* Full width */
+            text-align: center; /* Center text */
+            transition: all 0.3s ease; /* Smooth transitions */
+        }
+        h1 {
+            color: #ff4d4d; /* Title color */
+            margin-bottom: 20px; /* Space below the title */
+        }
+        .btn {
+            background-color: #ff4d4d; /* Button background color */
+            color: white; /* Button text color */
+            border: none; /* No border */
+            padding: 12px 24px; /* Button padding */
+            border-radius: 25px; /* Rounded button corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-size: 18px; /* Button text size */
+            margin: 10px; /* Margin around buttons */
+            transition: background-color 0.3s ease, transform 0.1s ease; /* Button hover effects */
+        }
+        .btn:hover {
+            background-color: #ff3333; /* Darker shade on hover */
+            transform: scale(1.05); /* Slightly increase size on hover */
+        }
+        input[type="date"], input[type="time"] {
+            width: 90%; /* Full width for inputs */
+            padding: 10px; /* Input padding */
+            margin-bottom: 20px; /* Space below inputs */
+            border: 2px solid #ffb3b3; /* Border color */
+            border-radius: 10px; /* Rounded corners */
+            font-size: 16px; /* Input text size */
+        }
+        .error-message {
+            color: #ff4d4d; /* Error message color */
+            font-size: 14px; /* Error message text size */
+            margin-top: 10px; /* Space above error message */
+            display: none; /* Hide by default */
+        }
+        .image-grid {
+            display: grid; /* Use grid layout for images */
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            gap: 15px; /* Space between images */
+            margin: 20px; /* Margin around the grid */
+        }
+        .image-option {
+            cursor: pointer; /* Pointer cursor on hover */
+            border-radius: 10px; /* Rounded corners for images */
+            overflow: hidden; /* Hide overflow */
+            transition: transform 0.3s ease; /* Smooth scale effect */
+        }
+        .image-option:hover {
+            transform: scale(1.05); /* Scale up on hover */
+        }
+        .image-option img {
+            width: 100%; /* Full width of the image */
+            margin-bottom: -7px;
+            height: auto; /* Maintain aspect ratio */
+        }
+        .selected {
+            border: 3px solid #ff4d4d; /* Highlight selected option */
+        }
+        #foodPicker .image-grid {
+            display: grid; /* Use grid layout for images */
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            gap: 15px; /* Space between images */
+            margin: 20px; /* Margin around the grid */
+        }
+        #foodPicker .image-option img {
+          cursor: pointer; /* Pointer cursor on hover */
+            border-radius: 10px; /* Rounded corners for images */
+            overflow: hidden; /* Hide overflow */
+            transition: transform 0.3s ease; /* Smooth scale effect */
+            font-size: 5px;
+        }
+        #foodPicker .image-option span {
+            font-size: 15px; /* Set your desired font size */
+            color: solid black; /* Optional: Set the text color */
+            display: block; /* Ensures the name appears on a new line below the image */
+            text-align: center; /* Center-aligns the text */
+            
+        }
+        
+        @media (max-width: 768px) {
+          
+          #foodPicker .image-option span {
+            font-size: 10px;
+            
+        }
+        }
