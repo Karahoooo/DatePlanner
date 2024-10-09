@@ -8,7 +8,7 @@ let selectedFood = ''; // Variable to hold the selected food
 
 function sendEmail() {
     const date = document.getElementById('datePicker').value;
-    const time = document.getElementById('timePicker').value;
+    const time = formatTime(document.getElementById('timePicker').value); // Format the time
     const locationDisplay = selectedLocation.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase());
 
     // Send the email using EmailJS
@@ -17,7 +17,7 @@ function sendEmail() {
         time: time,
         location: locationDisplay,
         food: selectedFood,
-        to_email: "balogochris12@gmail.com"
+        to_email: "balogochris12@gmail.com" // Your email address
     }).then(
         function(response) {
             console.log("Email sent successfully", response);
@@ -96,31 +96,47 @@ function populateFoodOptions() {
                 { name: 'Shawarma', img: 'shawarma.jpg' },
                 { name: 'Shawarma Rice', img: 'shawarmarice.jpeg' }, 
                 { name: 'Chaofan', img: 'chaofan.jpg' },
+                { name: 'Sweet & Sour Chicken',  img: 'Sweet and Sour chicken.jpg'}, 
                 { name: 'Potato Corner', img: 'potato corner.jpg' }
             ];
             break;
         case 'moa':
             foodChoices = [
-                { name: 'S&R', img: 'images/sr.jpg' },
-                { name: 'Chowfan', img: 'images/chowfan.jpg' },
-                { name: 'Chooks to Go', img: 'images/chooks.jpg' },
-                { name: 'Vikings', img: 'images/vikings.jpg' }
+                { name: 'Kuro Ramen', img: 'kuroramen.jpg' },
+                { name: 'Shiro Ramen', img: 'shiroramen.jpg' },
+                { name: 'Ramen Tonkatsu Set', img: 'tonkatsuset.jpg' },
+                { name: 'Ramen Gyoza Set', img: 'gyozaset.jpg' }, 
+                { name: 'Ramen Teriyaki Pork Don Set', img: 'tereyakiporkdonset.jpg' },
+                { name: 'Chickenjoy', img: 'chickenjoy.jpeg' },
+                { name: 'Burger Steak', img: 'burger steak.jpg' },
+                { name: 'Mc Ala King', img: 'chickenalaking.jpeg' },
+                { name: 'Original Recipe Chicken', img: 'originalchicken.jpg' }
             ];
             break;
         case 'olivarez':
             foodChoices = [
-                { name: 'Shawarma', img: 'images/shawarma_olivarez.jpg' },
-                { name: 'Bonchon', img: 'images/bonchon.jpg' },
-                { name: 'Potato Corner', img: 'images/potatocorner.jpg' },
-                { name: 'Sisig House', img: 'images/sisig.jpg' }
+                { name: 'Shawarma', img: 'shawarma.jpg' },
+                { name: 'Bibimbowl', img: 'bibimbowl.jpg' },
+                { name: 'Potato Corner', img: 'potato corner.jpg' },
+                { name: 'Takoyaki', img: 'takoyaki.jpg' }, 
+                { name: 'Pork Sisig', img: 'porksisig.jpg' },
+                { name: 'Kreamy Kangkong', img: 'kreamykangkong.jpg' },
+                { name: 'Beef & mushroom', img: 'beef&mushroom.jpg' },
+                { name: 'Beef Bulgogi', img: 'bulgogi.jpg' },
+                { name: 'Beef Yangnyeom', img: 'yangnyeom.jpg' }
             ];
             break;
         case 'sampaloc_lake':
             foodChoices = [
-                { name: 'Qweck Qweck', img: 'images/qweck.jpg' },
-                { name: 'Pares', img: 'images/pares.jpg' },
-                { name: 'Kwatogs', img: 'images/kwatogs.jpg' },
-                { name: 'Lomi House', img: 'images/lomi.jpg' }
+                { name: 'Beef Tapa', img: 'beeftapa.jpg' },
+                { name: 'Pares', img: 'pares.jpg' },
+                { name: 'Classic Burger', img: 'classicburger.jpg' },
+                { name: 'Burger Steak', img: 'burgersteak.jpg' }, 
+                { name: 'Fish & Fries', img: 'fish&fries.jpg' },
+                { name: 'Spud Platter', img: 'spudplatter.jpg' },
+                { name: 'Burgroup Steak', img: 'burgroupsteak.jpg' },
+                { name: 'Beef Taco Garlic Mushroom Fries', img: 'beeftaco.jpg' },
+                { name: 'Chicken Tempura', img: 'chickentempura.jpg' },
             ];
             break;
         default:
@@ -154,7 +170,7 @@ function selectFood(food, event) {
 
 function displayDateDetails() {
     const date = document.getElementById('datePicker').value;
-    const time = document.getElementById('timePicker').value;
+    const time = formatTime(document.getElementById('timePicker').value); // Format the time
     const dateDetails = document.getElementById('dateDetails');
     const locationDisplay = selectedLocation.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase());
     
@@ -163,6 +179,14 @@ function displayDateDetails() {
         <br><br>
         I can't wait to see you! ❤️ 
     `;
+}
+
+// Function to format time to 12-hour format
+function formatTime(time) {
+    const [hour, minute] = time.split(':').map(Number);
+    const period = hour >= 12 ? 'pm' : 'am';
+    const formattedHour = hour % 12 || 12; // Convert to 12-hour format
+    return `${formattedHour}:${minute.toString().padStart(2, '0')} ${period}`;
 }
 
 // Heart animation
@@ -189,4 +213,3 @@ function createHeart() {
 
 // Create hearts at intervals
 setInterval(createHeart, 500); // Adjust the interval for more/less frequency
-
