@@ -3,7 +3,7 @@ let selectedFood = ''; // Variable to hold the selected food
 
 // Initialize EmailJS
 (function() {
-    emailjs.init("HpsKieQo1D8tWaqgH20Sy"); // Replace with your actual EmailJS user ID
+    emailjs.init("u-NlPL8eGnMsD1TvY"); // Replace with your actual EmailJS user ID
 })();
 
 function sendEmail() {
