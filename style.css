@@ -60,6 +60,7 @@
             z-index: 2; /* Bring the content in front of the hearts */
         }
         .container {
+            position: center;
             background-color: #fff; /* Container background color */
             border-radius: 20px; /* Rounded corners */
             padding: 30px; /* Padding inside the container */
@@ -146,14 +147,41 @@
             
         }
         
+        .back-btn {
+          border: 1px solid red;
+          border-radius: 5px;
+          padding: 3px 5px;
+          position: absolute;
+          top: -54.5px;
+          left: 10px;
+          font-size: 24px;
+          color: #ff4d4d;
+          cursor: pointer;
+          transition: transform 0.3s ease;
+          
+        }
+
+.back-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Ensure the container has a relative position for absolute positioning of the back button */
+#locationPicker, #foodPicker {
+    position: relative;
+}
+
+        
         @media (max-width: 768px) {
           
           #foodPicker .image-option span {
             font-size: 9px;
-            
         }
-          .container{
+        .container{
           margin-left: 15px;
           margin-right: 15px;
+        }
+        h2 {
+          
+          font-size: 20px;
         }
         }
