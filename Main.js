@@ -79,6 +79,15 @@ function showFoodPicker() {
         document.getElementById('locationError').style.display = 'block'; // Show error message if no location is selected
     }
 }
+        function goBackToDateTimePicker() {
+            document.getElementById('locationPicker').style.display = 'none';
+            document.getElementById('dateTimePicker').style.display = 'block';
+        }
+
+        function goBackToLocationPicker() {
+            document.getElementById('foodPicker').style.display = 'none';
+            document.getElementById('locationPicker').style.display = 'block';
+        }
 
 function populateFoodOptions() {
     const foodOptionsDiv = document.getElementById('foodOptions');
@@ -213,3 +222,4 @@ function createHeart() {
 
 // Create hearts at intervals
 setInterval(createHeart, 500); // Adjust the interval for more/less frequency
+
