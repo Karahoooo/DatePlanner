@@ -72,7 +72,7 @@
         }
         h1 {
             color: #ff4d4d; /* Title color */
-            margin-bottom: 18px; /* Space below the title */
+            margin-bottom: 20px; /* Space below the title */
         }
         .btn {
             background-color: #ff4d4d; /* Button background color */
@@ -152,7 +152,7 @@
           border-radius: 5px;
           padding: 3px 5px;
           position: absolute;
-          top: -20px;
+          top: 10px;
           left: 10px;
           font-size: 24px;
           color: #ff4d4d;
