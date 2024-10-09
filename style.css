@@ -152,7 +152,7 @@
           border-radius: 5px;
           padding: 3px 5px;
           position: absolute;
-          top: 50px;
+          top: -60px;
           left: 10px;
           font-size: 24px;
           color: #ff4d4d;
@@ -183,5 +183,9 @@
         h2 {
           
           font-size: 20px;
+        }
+        h1 {
+          font-size: 25px;
+          margin-bottom: 25px;
         }
         }
